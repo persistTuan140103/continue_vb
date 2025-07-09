@@ -12,7 +12,7 @@ const {
   autodetectPlatformAndArch,
 } = require("../../../scripts/util/index");
 const {
-  copyConfigSchema,
+  // copyConfigSchema,
   installNodeModules,
   buildGui,
   copyOnnxRuntimeFromNodeModules,
@@ -27,6 +27,15 @@ const {
   copyTokenizers,
   copyScripts,
 } = require("./utils");
+
+const {
+  generateAndCopyConfigYamlSchema,
+  copyConfigSchema
+} = require("./generate-copy-config")
+
+const {
+  npmInstall
+} = require("./npm-install")
 
 // Clear folders that will be packaged to ensure clean slate
 rimrafSync(path.join(__dirname, "..", "bin"));
@@ -87,10 +96,11 @@ async function package(target, os, arch, exe) {
   console.log("[info] Packaging extension for target ", target);
 
   // Copy config_schema to intellij
-  copyConfigSchema();
+  await copyConfigSchema();
 
   // Install node_modules
-  installNodeModules();
+  // installNodeModules();
+  await npmInstall()
 
   // Build gui and copy to extensions
   await buildGui(ghAction());

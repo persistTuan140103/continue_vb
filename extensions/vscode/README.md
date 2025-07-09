@@ -1,14 +1,12 @@
 <div align="center">
 
-![Continue logo](media/readme.png)
-
 </div>
 
-<h1 align="center">Continue</h1>
+<h1 align="center">Genie Codie</h1>
 
 <div align="center">
 
-**[Continue](https://docs.continue.dev) enables to developers create, share, and use custom AI code assistants with our open-source [VS Code](https://marketplace.visualstudio.com/items?itemName=Continue.continue) extension and [hub of models, rules, prompts, docs, and other building blocks](https://hub.continue.dev)**
+**[GenieCodie] enables to developers create, share, and use custom AI code assistants with our open-source  [hub of models, rules, prompts, docs, and other building blocks]**
 
 </div>
 

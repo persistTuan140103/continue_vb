@@ -50,37 +50,38 @@ export const apiBaseInput: InputDescriptor = {
 
 export const providers: Partial<Record<string, ProviderInfo>> = {
   openai: {
-    title: "OpenAI",
+    title: "VietinBank AI",
     provider: "openai",
     description: "Use gpt-4, gpt-3.5-turbo, or any other OpenAI model",
     longDescription:
       "Use gpt-4, gpt-3.5-turbo, or any other OpenAI model. See [here](https://openai.com/product#made-for-developers) to obtain an API key.",
     icon: "openai.png",
-    tags: [ModelProviderTags.RequiresApiKey],
+    tags: [ModelProviderTags.Local],
     packages: [
-      models.gpt4o,
-      models.gpt4omini,
-      models.gpt4turbo,
-      models.gpt35turbo,
-      {
-        ...models.AUTODETECT,
-        params: {
-          ...models.AUTODETECT.params,
-          title: "OpenAI",
-        },
-      },
+      models.vietinbank_gemma3_27b
+      // models.gpt4o,
+      // models.gpt4omini,
+      // models.gpt4turbo,
+      // models.gpt35turbo,
+      // {
+      //   ...models.AUTODETECT,
+      //   params: {
+      //     ...models.AUTODETECT.params,
+      //     title: "OpenAI",
+      //   },
+      // },
     ],
     collectInputFor: [
-      {
-        inputType: "text",
-        key: "apiKey",
-        label: "API Key",
-        placeholder: "Enter your OpenAI API key",
-        required: true,
-      },
-      ...completionParamsInputsConfigs,
+      // {
+      //   inputType: "text",
+      //   key: "apiKey",
+      //   label: "API Key",
+      //   placeholder: "Enter your OpenAI API key",
+      //   required: true,
+      // },
+      // ...completionParamsInputsConfigs,
     ],
-    apiKeyUrl: "https://platform.openai.com/account/api-keys",
+    // apiKeyUrl: "https://platform.openai.com/account/api-keys",
   },
   anthropic: {
     title: "Anthropic",
@@ -321,13 +322,13 @@ Select the \`GPT-4o\` model below to complete your provider configuration, but n
           title: "Ollama",
         },
       },
-      ...openSourceModels,
+      // ...openSourceModels,
     ],
     collectInputFor: [
-      ...completionParamsInputsConfigs,
-      { ...apiBaseInput, defaultValue: "http://localhost:11434" },
+      // ...completionParamsInputsConfigs,
+      // { ...apiBaseInput, defaultValue: "http://localhost:11434" },
     ],
-    downloadUrl: "https://ollama.ai/download",
+    // downloadUrl: "https://ollama.ai/download",
   },
   cohere: {
     title: "Cohere",

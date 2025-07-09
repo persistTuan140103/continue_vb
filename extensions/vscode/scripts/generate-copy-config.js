@@ -123,4 +123,5 @@ async function generateAndCopyConfigYamlSchema() {
 
 module.exports = {
   generateAndCopyConfigYamlSchema,
+  copyConfigSchema
 };

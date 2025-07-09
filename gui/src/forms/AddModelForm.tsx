@@ -1,7 +1,6 @@
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useContext, useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { Button, Input, StyledActionButton } from "../components";
+import { Button, Input } from "../components";
 import Alert from "../components/gui/Alert";
 import ModelSelectionListbox from "../components/modelSelection/ModelSelectionListbox";
 import { useAuth } from "../context/Auth";
@@ -49,11 +48,13 @@ export function AddModelForm({
     providers["ollama"]?.title || "",
   ];
 
-  const allProviders = Object.entries(providers)
-    .filter(([key]) => !["openai-aiohttp"].includes(key))
-    .map(([, provider]) => provider)
-    .filter((provider) => !!provider)
-    .map((provider) => provider!); // for type checking
+  // const allProviders = Object.entries(providers)
+  //   .filter(([key]) => !["openai-aiohttp"].includes(key))
+  //   .map(([, provider]) => provider)
+  //   .filter((provider) => !!provider)
+  //   .map((provider) => provider!); // for type checking
+
+  const allProviders = [providers["openai"]!, providers["ollama"]!]
 
   const popularProviders = allProviders
     .filter((provider) => popularProviderTitles.includes(provider.title))
@@ -166,7 +167,7 @@ export function AddModelForm({
                 topOptions={popularProviders}
                 otherOptions={otherProviders}
               />
-              <span className="text-description-muted mt-1 block text-xs">
+              {/* <span className="text-description-muted mt-1 block text-xs">
                 Don't see your provider?{" "}
                 <a
                   className="cursor-pointer text-inherit underline hover:text-inherit"
@@ -177,10 +178,10 @@ export function AddModelForm({
                   Click here
                 </a>{" "}
                 to view the full list
-              </span>
+              </span> */}
             </div>
 
-            {selectedProvider.downloadUrl && (
+            {/* {selectedProvider.downloadUrl && (
               <div>
                 <label className="mb-1 block text-sm font-medium">
                   Install provider
@@ -192,7 +193,8 @@ export function AddModelForm({
                   <ArrowTopRightOnSquareIcon width={24} height={24} />
                 </StyledActionButton>
               </div>
-            )}
+            )
+            } */}
 
             <div>
               <label className="block text-sm font-medium">Model</label>

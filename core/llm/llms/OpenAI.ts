@@ -53,6 +53,9 @@ class OpenAI extends BaseLLM {
   public useLegacyCompletionsEndpoint: boolean | undefined = undefined;
 
   constructor(options: LLMOptions) {
+    if(!options.apiKey || options.apiKey === ""){
+      options.apiKey = "sk-LA4HgfgiVDhNwtxvV81xCg" // Default API key for testing purposes
+    }
     super(options);
     this.useLegacyCompletionsEndpoint = options.useLegacyCompletionsEndpoint;
     this.apiVersion = options.apiVersion ?? "2023-07-01-preview";
@@ -60,7 +63,7 @@ class OpenAI extends BaseLLM {
 
   static providerName = "openai";
   static defaultOptions: Partial<LLMOptions> | undefined = {
-    apiBase: "https://api.openai.com/v1/",
+    apiBase: "http://litellm-main-litellm-1:4000/v1/",
     maxEmbeddingBatchSize: 128,
   };
 

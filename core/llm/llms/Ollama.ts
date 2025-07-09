@@ -135,7 +135,7 @@ interface OllamaTool {
 class Ollama extends BaseLLM implements ModelInstaller {
   static providerName = "ollama";
   static defaultOptions: Partial<LLMOptions> = {
-    apiBase: "http://localhost:11434/",
+    apiBase: "http://litellm-main-litellm-1:4000/",
     model: "codellama-7b",
     maxEmbeddingBatchSize: 64,
   };

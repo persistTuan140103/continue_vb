@@ -1822,4 +1822,16 @@ export const models: { [key: string]: ModelPackage } = {
     providerOptions: [],
     isOpenSource: false,
   },
+  vietinbank_gemma3_27b: {
+    title: "gemma3-27b_q8",
+    description: "Generative artificial intelligence chatbot developed by xAI.",
+    refUrl: "",
+    params: {
+      title: "Gemma 3.27b Q8",
+      model: "ollama/gemma3-27b-q8_0:latest",
+      contextLength: 128_000,
+    },
+    providerOptions: ["openai"],
+    isOpenSource: false,
+  }
 };
