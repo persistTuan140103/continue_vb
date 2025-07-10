@@ -1,5 +1,5 @@
 {
-  "name": "continue",
+  "name": "ai-vietinbank",
   "icon": "media/image_vietinbank.png",
   "author": "VietinBank AI",
   "version": "1.0.0",
@@ -21,7 +21,7 @@
   "displayName": "Genie Codie - open-source AI code assistant",
   "pricing": "Free",
   "description": "The leading open-source AI code assistant",
-  "publisher": "Continue",
+  "publisher": "ai-vietinbank",
   "engines": {
     "vscode": "^1.70.0",
     "node": ">=20.19.0"
