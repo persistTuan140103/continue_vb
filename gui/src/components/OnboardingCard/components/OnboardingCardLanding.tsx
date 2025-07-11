@@ -1,12 +1,10 @@
 import { useContext } from "react";
-import { Button, SecondaryButton } from "../..";
 import { useAuth } from "../../../context/Auth";
 import { IdeMessengerContext } from "../../../context/IdeMessenger";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { selectCurrentOrg } from "../../../redux/slices/profilesSlice";
 import { selectFirstHubProfile } from "../../../redux/thunks/selectFirstHubProfile";
 import { hasPassedFTL } from "../../../util/freeTrial";
-import { ToolTip } from "../../gui/Tooltip";
 import ContinueLogo from "../../svg/ContinueLogo";
 import { useOnboardingCard } from "../hooks/useOnboardingCard";
 
@@ -51,7 +49,7 @@ export function OnboardingCardLanding({
         <ContinueLogo height={75} />
       </div>
 
-      {pastFreeTrialLimit ? (
+      {/* {pastFreeTrialLimit ? (
         <>
           <p className="xs:w-3/4 w-full text-sm">
             You've reached the free trial limit. Visit the Continue Platform to
@@ -93,11 +91,12 @@ export function OnboardingCardLanding({
             Log in to Continue Hub
           </Button>
         </>
-      )}
+      )
+      } */}
 
-      <SecondaryButton onClick={onSelectConfigure} className="w-full">
+      {/* <SecondaryButton onClick={onSelectConfigure} className="w-full">
         Or, configure your own models
-      </SecondaryButton>
+      </SecondaryButton> */}
     </div>
   );
 }
